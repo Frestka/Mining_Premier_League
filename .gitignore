@@ -9,5 +9,5 @@ __pycache__/
 .DS_Store
 
 # Ignora eventuali ambienti virtuali locali
-venv/
+.venv/
 env/
