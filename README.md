@@ -16,8 +16,9 @@ Se è la prima volta che scarichi questo progetto sul tuo PC, segui questi step:
    `.\.venv\Scripts\activate`
    *⚠️ Attenzione all'errore tipico di Windows: > Se ricevi un testo rosso pieno di errori che dice qualcosa come "L'esecuzione di script è disabilitata in questo sistema", è colpa della sicurezza di Windows PowerShell.
    La soluzione: Apri PowerShell su Windows come Amministratore (fuori da VS Code), digita Set-ExecutionPolicy RemoteSigned, premi Invio, scrivi S (Sì) e riprova.(Se ti dà errore di permessi su Windows, apri PowerShell come amministratore e lancia `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`, poi riprova).*
-6. **Installa le librerie fisse:**
+6. **Installa e attiva le librerie:**
    `pip install -r requirements.txt`
+   `nbstripout --install`  (Questo comando serve a pulire i grafici pesanti dai notebook prima di salvarli su GitHub, evitando conflitti di codice).
 7. **Scarica il dataset:**:
    * Crea una cartella chiamata data nella root del progetto.
    * Scarica il file CSV da Drive e mettilo dentro data/.
@@ -42,22 +43,32 @@ Quando hai finito, manda tutto su GitHub:
 `git push origin nome-tua-feature`
 
 
+## 🚀 Come lavorare su Google Colab
+
+Per l'esecuzione dei calcoli pesanti o per mostrare i risultati, usiamo Google Colab. Segui questi step:
+
+### 1. Preparazione Drive (Solo una volta)
+Prima di iniziare, devi "agganciare" la cartella del progetto al tuo Drive:
+* Vai su Google Drive e trova la cartella condivisa **Mining_Premier_League**.
+* Clicca con il tasto destro sulla cartella e scegli **"Aggiungi scorciatoia a Drive"** (Add shortcut to Drive).
+* Senza questo passaggio, Colab non riuscirà a trovare i dati!
+
+### 2. Il Ciclo di Sviluppo Ibrido
+1. **Scrivi il codice** (le funzioni `.py`) su **VS Code** nel tuo PC.
+2. **Fai il Push** su GitHub (vedi sezione Routine Quotidiana).
+3. **Apri Colab** e apri il file `notebooks/ambiente_setup.ipynb`.
+4. **Esegui la cella di Setup**: Questo monterà il Drive, clonerà il codice aggiornato da GitHub e installerà le librerie.
+5. **Lavora**: Ora puoi importare le tue funzioni con `from src.data_loader import load_data` e usarle!
+
+### 3. Sincronizzazione in tempo reale
+In cima a ogni notebook su Colab, aggiungiamo sempre:
+```python
+%load_ext autoreload
+%autoreload 2
+```
+Così, se modifichi un file `.py` su VS Code e fai push, ti basterà fare un `git pull` su Colab e le funzioni si aggiorneranno da sole senza dover riavviare tutto!
+
 ---
-
-lavoro su colab:
-Apri Google Colab.
-crea i notebbok su vs cose e Li salvi con git commit come tutti gli altri file.
-Carica il tuo notebook Jupyter (es. analisi.ipynb).
-
-
-Quando sei su Colab Per portarci dentro il tuo lavoro, segui questi 3 step in una cella di codice in alto al notebook
-Nelle prime celle, importi le funzioni da src/ (che di solito sono già sincronizzate su Drive o le hai salvate lì).
-
-Esegui le analisi usando i dati che hai caricato su Drive.  
-
-
-
-
 
 ## ⚠️ Le 3 Regole d'Oro del Team
 
