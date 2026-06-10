@@ -31,7 +31,7 @@ def load_data(file_name="dataset.parquet"):
     Carica i dati Bronze (grezzi) in modo dinamico tra Locale e Colab.
     Nessun membro del team dovra mai cambiare i path a mano.
     """
-    # 1. Controllo se siamo su Colab (l'ambiente Cloud)
+    # 1. Controllo se siamo su Colab 
     if 'google.colab' in str(get_ipython.__class__) if 'get_ipython' in globals() else os.path.exists('/content'):
         try:
             from google.colab import drive
@@ -41,11 +41,9 @@ def load_data(file_name="dataset.parquet"):
             pass
 
         # PERCORSO DRIVE CONDIVISO:
-        # Trovate un accordo su come chiamare la cartella condivisa su Drive
-        # e assicuratevi di aver creato il collegamento in "Il mio Drive".
         path = f'/content/drive/MyDrive/Mining_Premier_League/data/{file_name}'
 
-    # 2. Se siamo in locale (sui vostri PC, da VS Code)
+    # 2. Se siamo in locale 
     else:
         project_root = get_project_root()
         local_data_dir = os.path.join(project_root, 'data')

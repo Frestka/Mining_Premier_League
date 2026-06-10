@@ -12,10 +12,11 @@ Se è la prima volta che scarichi questo progetto sul tuo PC, segui questi step:
 3. **Apri la cartella su VS Code.**
 4. **Crea l'ambiente virtuale (la "bolla"):**
    `python -m venv .venv`
-5. **Attiva la bolla:**
-   `.\.venv\Scripts\activate`
-   *⚠️ Attenzione all'errore tipico di Windows: > Se ricevi un testo rosso pieno di errori che dice qualcosa come "L'esecuzione di script è disabilitata in questo sistema", è colpa della sicurezza di Windows PowerShell.
-   La soluzione: Apri PowerShell su Windows come Amministratore (fuori da VS Code), digita Set-ExecutionPolicy RemoteSigned, premi Invio, scrivi S (Sì) e riprova.(Se ti dà errore di permessi su Windows, apri PowerShell come amministratore e lancia `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`, poi riprova).*
+5. **Attiva la bolla (l'ambiente virtuale):**
+   - **Su Mac / Linux:** `source .venv/bin/activate`
+   - **Su Windows:** `.\.venv\Scripts\activate`
+   
+   *(⚠️ Attenzione all'errore tipico di Windows: se ricevi un testo rosso pieno di errori che dice "L'esecuzione di script è disabilitata...", apri PowerShell come Amministratore e lancia `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`, premi Invio, scrivi S e riprova).*
 6. **Installa e attiva le librerie:**
    `pip install -r requirements.txt`
    `nbstripout --install`  (Questo comando serve a pulire i grafici pesanti dai notebook prima di salvarli su GitHub, evitando conflitti di codice).
