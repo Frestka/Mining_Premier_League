@@ -22,6 +22,8 @@
 
   - ssitemare insime il markdown di ML
 
+  - controllare perchè i Feature extraction nessun feature restituisce si (cella 7)
+
   COSE DA CHIEDERE AL PROF
 
 - la teoria(slide) vine chiesta all'orale?
