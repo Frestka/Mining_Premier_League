@@ -20,10 +20,10 @@ Se è la prima volta che scarichi questo progetto sul tuo PC, segui questi step:
 6. **Installa e attiva le librerie:**
    `pip install -r requirements.txt`
    `nbstripout --install`  (Questo comando serve a pulire i grafici pesanti dai notebook prima di salvarli su GitHub, evitando conflitti di codice).
-7. **Scarica il dataset:**:
-   * Crea una cartella chiamata data nella root del progetto.
-   * Scarica il file CSV da Drive e mettilo dentro data/.
-   * Lancia il comando: python src/data_loader.py per generare il file .parquet
+7. **Scarica il dataset:**
+   * Crea una cartella chiamata `data` nella root del progetto (se non c'è già).
+   * Scarica il file CSV originale da Drive e mettilo dentro `data/`.
+   * **Fatto!** Quando eseguirai il *Notebook 1*, se il file `.parquet` non esiste, il notebook lo convertirà automaticamente per te in locale.
 
 ---
 
