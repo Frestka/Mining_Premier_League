@@ -1,7 +1,7 @@
-# ⚽ Progetto Data Mining - Premier League
+# Progetto Data Mining - Premier League
 VS Code ↔ GitHub ↔ Google Colab
 
-## 🛠️ Setup Iniziale (Da fare SOLO la prima volta)
+## Setup Iniziale (Da fare SOLO la prima volta)
 
 Se è la prima volta che scarichi questo progetto sul tuo PC, segui questi step:
 
@@ -16,7 +16,7 @@ Se è la prima volta che scarichi questo progetto sul tuo PC, segui questi step:
    - **Su Mac / Linux:** `source .venv/bin/activate`
    - **Su Windows:** `.\.venv\Scripts\activate`
    
-   *(⚠️ Attenzione all'errore tipico di Windows: se ricevi un testo rosso pieno di errori che dice "L'esecuzione di script è disabilitata...", apri PowerShell come Amministratore e lancia `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`, premi Invio, scrivi S e riprova).*
+   *(Attenzione all'errore tipico di Windows: se ricevi un testo rosso pieno di errori che dice "L'esecuzione di script è disabilitata...", apri PowerShell come Amministratore e lancia `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`, premi Invio, scrivi S e riprova).*
 6. **Installa e attiva le librerie:**
    `pip install -r requirements.txt`
    `nbstripout --install`  (Questo comando serve a pulire i grafici pesanti dai notebook prima di salvarli su GitHub, evitando conflitti di codice).
@@ -27,7 +27,7 @@ Se è la prima volta che scarichi questo progetto sul tuo PC, segui questi step:
 
 ---
 
-## ☀️ Routine Quotidiana (Da fare OGNI GIORNO)
+## Routine Quotidiana (Da fare OGNI GIORNO)
 
 Segui rigorosamente questo ordine per non creare conflitti con il codice degli altri:
 
@@ -44,7 +44,7 @@ Quando hai finito, manda tutto su GitHub:
 `git push origin nome-tua-feature`
 
 
-## 🚀 Come lavorare su Google Colab
+## Come lavorare su Google Colab
 
 Per l'esecuzione dei calcoli pesanti o per mostrare i risultati, usiamo Google Colab. Segui questi step:
 
@@ -71,7 +71,7 @@ Così, se modifichi un file `.py` su VS Code e fai push, ti basterà fare un `gi
 
 ---
 
-## ⚠️ Le 3 Regole d'Oro del Team
+## Le 3 Regole d'Oro del Team
 
 1. **I DATI NON VANNO SU GITHUB:** Non fare MAI commit di file `.csv` o `.parquet`. I dati stanno solo su Google Drive e in locale nella cartella `data/` (che è protetta dal `.gitignore`).
 2. **I NOTEBOOK STANNO SU COLAB:** I file `.ipynb` servono solo per l'esecuzione finale. Aprite Colab, clonate il repo, caricate i dati da Drive e importate le funzioni da `src/`.
